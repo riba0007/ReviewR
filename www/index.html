@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://griffis.edumedia.ca  'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content: griffis.edumedia.ca  placeholdit.imgix.net placehold.it ;"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="msapplication-tap-highlight" content="no"/>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+
+        <link href="css/ratchet.min.css" rel="stylesheet" />
+        <link href="css/ratchet-theme-ios.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/index.css" />
+        <title>ReviewR</title>
+        
+    </head>
+    <body>
+        <header class="bar bar-nav">
+            <a class="btn btn-link btn-nav pull-right" href="#addModal">
+                Add Review
+                <span class="icon icon-compose"></span>
+            </a>
+            <h1 class="title">ReviewR</h1>
+        </header>
+        <div class="content">
+            <!-- read through localStorage for contacts -->
+            <ul class="table-view" id="review-list">
+                <!--li class="table-view-cell media">
+                    <a class="navigate-right" href="#detailsModal">
+                        <img class="media-object pull-left" src="img/placeholder.png">
+                        <div class="media-body">
+                            <span>Item Name</span>
+                            <div class="stars small">
+                                <span class="star"></span>
+                                <span class="star"></span>
+                                <span class="star"></span>
+                                <span class="star"></span>
+                                <span class="star"></span>
+                            </div>
+                        </div>
+                    </a>
+                </li-->
+            </ul>
+        </div>
+        
+        <div id="addModal" class="modal">
+            <header class="bar bar-nav">
+                <a class="icon icon-close pull-right" href="#addModal"></a>
+                <h1 class="title">Add Review</h1>
+            </header>
+
+            <div class="content">
+                <div class="card">
+                    <form class="input-group">
+                        <div class="input-row">
+                            <label>Item:</label>
+                            <input id="item-name" type="text" placeholder="Item"/>
+                        </div>
+                        <label>Review:</label>
+                        <textarea id="item-review" rows="3" maxlength="140"></textarea>
+                        <div class="input-row">
+                            <label>Rating:</label>
+                            <p class="stars">
+                                <span class="star"></span>
+                                <span class="star"></span>
+                                <span class="star"></span>
+                                <span class="star"></span>
+                                <span class="star"></span>
+                            </p>
+                        </div>
+                    </form>
+                    <p class="content-padded">
+                        <img  id="review-picture" class="media-object hidden" src="img/placeholder.png">
+                        <button id="review-take-picture" class="btn btn-positive btn-block">
+                            <span class="icon icon-play"></span>
+                            Take a Picture 
+                        </button>
+                        <button id="review-cancel" class="btn btn-block">
+                            <span class="icon icon-close"></span>
+                            Cancel 
+                        </button>
+                        <button id="review-save" class="btn btn-primary btn-block">
+                            <span class="icon icon-check"></span>
+                            Save  
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="detailsModal" class="modal">
+            <header class="bar bar-nav">
+                <a class="icon icon-close pull-right" href="#detailsModal"></a>
+                <h1 class="title">ReviewR</h1>
+            </header>
+            
+            <div class="content">
+                <div class="card">
+                    <img class="media-object" src="img/placeholder.png">
+
+                    <div class="content-padded">
+                        <span>Item Name</span>
+                        <div class="stars">
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                        </div>
+                    </div>
+                            
+                    <p class="content-padded">
+                        <button id="review-delete" class="btn btn-negative btn-block">
+                            <span class="icon icon-close"></span>
+                            Delete Review 
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/ratchet.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
